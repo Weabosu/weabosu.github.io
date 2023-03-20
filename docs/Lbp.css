@@ -16,14 +16,14 @@
 
 /*Right arrow*/
 .arrow {
-	border: solid white;
-	border-width: 0 3px 3px 0;
-	display: inline-block;
-	padding: 5px;
-	transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-	margin-right:20px;
-	margin-left:15px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 5px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  margin-right:20px;
+  margin-left:15px;
 }
 
 /*Day*/
@@ -33,6 +33,12 @@
 
 table {
 	text-align:center;
+}
+
+#save {
+	text-align:center;
+	margin:auto;
+	width:50%;
 }
 
 /*-----Small rewards-----*/
