@@ -1,0 +1,109 @@
+/*-------------Basic stuff-------------*/
+* {
+	box-sizing: border-box;
+	font-family:Tahoma;
+}
+
+.dark-mode {
+	background-color: #181818;
+	/*background-color: transparant;*/
+	color: white;
+}
+
+/*-------------Bar-------------*/
+#Lbp-bar {
+	overflow: scroll;
+}
+
+/*Right arrow*/
+.arrow {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 5px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  margin-right:20px;
+  margin-left:15px;
+}
+
+/*Day*/
+.day {
+	text-align:center;
+}
+
+table {
+	text-align:center;
+}
+
+/*-----Small rewards-----*/
+.small-reward{
+	min-width:80px;
+	border:3px solid;
+	border-radius:5px;
+	padding:5px 5px;
+}
+
+/*-----Big rewards-----*/
+.big-reward{
+	min-width:80px;
+	border:3px solid hsl(240,80%,50%);
+	border-radius:5px;
+	padding:5px 5px;
+	background-color:hsla(240,80%,50%,0.5);
+}
+
+/*-----Ultimate rewards-----*/
+.ult-reward{
+	min-width:80px;
+	border:3px solid hsl(60,100%,80%);
+	border-radius:5px;
+	padding:5px 5px;
+	background-color:hsla(60,100%,80%,0.4);
+}
+
+
+#save {
+	position:absolute;
+}
+
+#progress {
+	text-align:center;
+}
+
+button {
+	margin-left:5px;
+	margin-right:5px;
+}
+
+/*-----Box-----*/
+.box {
+	min-width:80px;
+	padding:5px 5px;
+}
+
+#arr {
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 5px;
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	margin-right:23px;
+	margin-left:15px;
+}
+
+/*-----Exp-bar-----*/
+#exp-bar {
+	width:4030px;
+	border: solid white;
+	border-radius:25px;
+	background-color: transparant;
+	margin-left:35px;
+}
+
+#bar {
+	width: 0%;
+	height: 15px;
+	border-radius:25px;
+	background-color: green;
+}
