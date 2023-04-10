@@ -1,14 +1,38 @@
+//localStorage.clear();
+
 //-------Initialization of all needed variables for the progressbar-------
 var checkboxes = document.querySelectorAll('input[type=checkbox]'); //array-like object
-var full_bar = 30000;
-var m_h = 100;
-var s_h = 70;
-var threshold = 1000;
-var multiplicator = 1;
-var bar = document.getElementById("bar");
-var exp_bar = document.getElementById("exp-bar");
+const full_bar = 30000;
+
+base_value_m_h = 70
+base_value_s_h = 40
+bonus_15 = 80
+bonus_10 = 50
+bonus_5 = 30
+
+const threshold = 1000;
+const bar = document.getElementById("bar");
+const exp_bar = document.getElementById("exp-bar");
+
+var c_d = document.getElementById("cheat_day_input");
+var d_s = document.getElementById("day_streak_input");
+var d_s_box_15 = document.getElementById("15er");
+var d_s_box_10 = document.getElementById("10er");
+var d_s_box_5 = document.getElementById("5er");
 
 load_data()
+cheat_day_reset()
+
+// If changing cheat day value, then save it
+c_d.addEventListener('change', cheat_day);
+
+// If changing streak day value, then save it
+d_s.addEventListener('change', day_streak);
+
+// Clicking checkbox of bonus day streak to reset it and save the change
+d_s_box_15.addEventListener('change', bonus_reset_15);
+d_s_box_10.addEventListener('change', bonus_reset_10);
+d_s_box_5.addEventListener('change', bonus_reset_5);
 
 // Showing precise progress when hovering over bar
 actual_progress = localStorage.getItem("width");
@@ -19,7 +43,6 @@ exp_bar.title = actual_progress + "/" + full_bar;
 // Getting right width for the functions below
 function right_width() {
     if (localStorage.getItem("width_trigger") == null) {
-        console.log(localStorage.getItem("width_trigger"));
         // have to save the width_trigger to 1, if we close/reload the browser
         localStorage.setItem("width_trigger",1);
 
@@ -37,7 +60,7 @@ function right_threshold() {
 
         // Initialization of threshold values
         localStorage.setItem("threshold",1000);
-        localStorage.setItem("i",0);
+        localStorage.setItem("i",3);
         return [Number(localStorage.getItem("threshold")), Number(localStorage.getItem("i"))];
     } else {
         return [Number(localStorage.getItem("threshold")), Number(localStorage.getItem("i"))];
@@ -49,6 +72,21 @@ function main_habit() {
 
     width = right_width();
     
+    m_h = base_value_m_h
+
+    // Check if any bonus exp is avaiable starting with lowest
+    if (checkboxes[2].checked == true) {
+        m_h = m_h + bonus_5
+    }
+
+    if (checkboxes[1].checked == true) {
+        m_h = m_h + bonus_10
+    }
+
+    if (checkboxes[0].checked == true) {
+        m_h = m_h + bonus_15
+    }
+
     if (width != full_bar) {
         // Progressbar
         if (width < full_bar - m_h){
@@ -90,6 +128,21 @@ function main_habit_3x() {
 
     width = right_width();
 
+    m_h = base_value_m_h
+
+    // Check if any bonus exp is avaiable starting with lowest
+    if (checkboxes[2].checked == true) {
+        m_h = m_h + bonus_5
+    }
+
+    if (checkboxes[1].checked == true) {
+        m_h = m_h + bonus_10
+    }
+
+    if (checkboxes[0].checked == true) {
+        m_h = m_h + bonus_15
+    }
+
     if (width != full_bar) {
         if (width < full_bar - 3 * m_h){
             width = width + 3 * m_h;
@@ -130,6 +183,21 @@ function main_habit_3x() {
 function sub_habit() {
 
     width = right_width();
+    
+    s_h = base_value_s_h
+
+    // Check if any bonus exp is avaiable starting with lowest
+    if (checkboxes[2].checked == true) {
+        s_h = s_h + bonus_5
+    }
+
+    if (checkboxes[1].checked == true) {
+        s_h = s_h + bonus_10
+    }
+
+    if (checkboxes[0].checked == true) {
+        s_h = s_h + bonus_15
+    }
 
     if (width != full_bar) {
         if (width < full_bar - s_h){
@@ -178,14 +246,90 @@ function load_data() {
     for (j = 0; j < checkboxes.length; j++) {
         checkboxes[j].checked = localStorage.getItem(checkboxes[j].value) === 'true' ? true:false;
     }
+
+    // Cheat day
+    if (Number(localStorage.getItem('c_d')) !== null) {
+        c_d.value = Number(localStorage.getItem('c_d'))
+    }
+
+    // Day streak
+    if (Number(localStorage.getItem('d_s')) !== null) {
+        d_s.value = Number(localStorage.getItem('d_s'))
+    }
 }
 
 function reset() {
     localStorage.clear()
 
     bar.style.width = "0%";
-    for (j = 0; j < checkboxes.length; j++) {
+    for (j = 3; j < checkboxes.length; j++) {
         checkboxes[j].checked = false;
         localStorage.setItem(checkboxes[j].value, checkboxes[j].checked); 
+    }
+
+}
+
+function cheat_day() {
+    localStorage.setItem('c_d', c_d.value);
+}
+
+function day_streak() {
+    localStorage.setItem('d_s', d_s.value);
+
+    // If we reach some threshold, then mark the bonuses and change the exp gains
+    if (d_s.value == 5) {
+        checkboxes[2].checked = true;
+        localStorage.setItem(checkboxes[2].value, checkboxes[2].checked)
+    } else if (d_s.value == 10) {
+        checkboxes[1].checked = true;
+        localStorage.setItem(checkboxes[1].value, checkboxes[1].checked)
+    } else if (d_s.value == 15) {
+        checkboxes[0].checked = true;
+        localStorage.setItem(checkboxes[0].value, checkboxes[0].checked)
+    }
+}
+
+function bonus_reset_15() {
+
+    if (checkboxes[0].checked == false) {
+        checkboxes[0].checked = false;
+        localStorage.setItem(checkboxes[0].value, checkboxes[0].checked);
+    }
+    else {
+        checkboxes[0].checked = true;
+        localStorage.setItem(checkboxes[0].value, checkboxes[0].checked);
+    }
+
+}
+
+function bonus_reset_10() {
+    if (checkboxes[1].checked == false) {
+        checkboxes[1].checked = false;
+        localStorage.setItem(checkboxes[1].value, checkboxes[1].checked);
+    }
+    else {
+        checkboxes[1].checked = true;
+        localStorage.setItem(checkboxes[1].value, checkboxes[1].checked);
+    }
+}
+
+function bonus_reset_5() {
+    if (checkboxes[2].checked == false) {
+        checkboxes[2].checked = false;
+        localStorage.setItem(checkboxes[2].value, checkboxes[2].checked);
+    }
+    else {
+        checkboxes[2].checked = true;
+        localStorage.setItem(checkboxes[2].value, checkboxes[2].checked);
+    }
+}
+
+// If day is 1 (1-31 days) then reset it to 3 cheat days
+function cheat_day_reset() {
+    var today = new Date();
+    var day = today.getDate();
+
+    if (day == 1) {
+        localStorage.setItem('c_d', 3);
     }
 }

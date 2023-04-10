@@ -25,15 +25,43 @@ footer, header, hgroup, menu, nav, section {
  display: block;
 }
 
+body {
+ line-height: 1;
+}
+
 /*-------------Basic stuff-------------*/
 * {
-	box-sizing: border-box;
+	box-sizing:border-box;
 }
 
 .dark-mode {
-	/*background-color: #181818;*/
-	background-color: transparant;
+	background-color: #181818;
+	/*background-color: transparant;*/
 	color: white;
+}
+
+/*-------------Day streak-------------*/
+.day_streak_text {
+	color:pink;
+	font-weight:bold;
+	margin-right:5px;
+}
+
+.cheat_day_text {
+	color:hsl(240,80%,80%);
+}
+
+#day_streak_input {
+	width:40px;
+	margin-right:40px;
+}
+
+#cheat_day_input {
+	width:30px;
+}
+
+#day_streak_table {
+	text-align:left;
 }
 
 /*-------------Bar-------------*/
@@ -120,6 +148,7 @@ button {
 
 /*-----Exp-bar-----*/
 #exp-bar {
+	/*width:3967px;*/
 	width:98%;
 	border: solid white;
 	border-radius:25px;
