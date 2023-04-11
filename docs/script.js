@@ -333,3 +333,15 @@ function cheat_day_reset() {
         localStorage.setItem('c_d', 3);
     }
 }
+
+function day_streak_reset() {
+    // Reset bonus
+    for (j = 0; j < 3; j++) {
+        checkboxes[j].checked = false
+        localStorage.setItem(checkboxes[j].value,false)
+    }
+
+    // Reset day streak
+    d_s.value = 0
+    localStorage.setItem("d_s",0)
+}
