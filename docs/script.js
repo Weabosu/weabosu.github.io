@@ -99,7 +99,7 @@ function main_habit() {
             console.log(i)
             if (checkboxes[i+3].checked == false) {
                 checkboxes[i+3].checked = true
-                localStorage.setItem(checkboxes[i].value, checkboxes[i].checked);
+                localStorage.setItem(checkboxes[i+3].value, checkboxes[i+3].checked);
             }
         }
 
@@ -150,7 +150,7 @@ function main_habit_3x() {
             console.log(i)
             if (checkboxes[i+3].checked == false) {
                 checkboxes[i+3].checked = true
-                localStorage.setItem(checkboxes[i].value, checkboxes[i].checked);
+                localStorage.setItem(checkboxes[i+3].value, checkboxes[i+3].checked);
             }
         }
 
@@ -201,7 +201,7 @@ function sub_habit() {
             console.log(i)
             if (checkboxes[i+3].checked == false) {
                 checkboxes[i+3].checked = true
-                localStorage.setItem(checkboxes[i].value, checkboxes[i].checked);
+                localStorage.setItem(checkboxes[i+3].value, checkboxes[i+3].checked);
             }
         }
 
@@ -252,7 +252,7 @@ function milestone() {
             console.log(i)
             if (checkboxes[i+3].checked == false) {
                 checkboxes[i+3].checked = true
-                localStorage.setItem(checkboxes[i].value, checkboxes[i].checked);
+                localStorage.setItem(checkboxes[i+3].value, checkboxes[i+3].checked);
             }
         }
 
@@ -303,7 +303,7 @@ function minigoal() {
             console.log(i)
             if (checkboxes[i+3].checked == false) {
                 checkboxes[i+3].checked = true
-                localStorage.setItem(checkboxes[i].value, checkboxes[i].checked);
+                localStorage.setItem(checkboxes[i+3].value, checkboxes[i+3].checked);
             }
         }
 
