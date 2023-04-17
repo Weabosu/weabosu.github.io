@@ -4,11 +4,11 @@
 var checkboxes = document.querySelectorAll('input[type=checkbox]'); //array-like object
 const full_bar = 30000;
 
-base_value_m_h = 70
-base_value_s_h = 40
-bonus_15 = 80
-bonus_10 = 50
-bonus_5 = 30
+base_value_m_h = 150
+base_value_s_h = 100
+bonus_15 = 150
+bonus_10 = 100
+bonus_5 = 50
 
 const threshold = 1000;
 const bar = document.getElementById("bar");
@@ -126,9 +126,9 @@ function main_habit() {
 
 function main_habit_3x() {
 
-    width = right_width();
+    idth = right_width();
 
-    m_h = base_value_m_h
+    m_h = 3 * base_value_m_h
 
     // Check if any bonus exp is avaiable starting with lowest
     if (checkboxes[2].checked == true) {
@@ -144,11 +144,11 @@ function main_habit_3x() {
     }
 
     if (width != full_bar) {
-        if (width < full_bar - 3 * m_h){
-            width = width + 3 * m_h;
+        if (width < full_bar - m_h){
+            width = width + m_h;
             w = width * 100 / full_bar;
             bar.style.width = w + "%";
-        } else if (full_bar - 3 * m_h <= width < full_bar) {
+        } else if (full_bar - m_h <= width < full_bar) {
             width = full_bar;
             w = width * 100 / full_bar;
             bar.style.width = w + "%";
@@ -266,6 +266,10 @@ function reset() {
         checkboxes[j].checked = false;
         localStorage.setItem(checkboxes[j].value, checkboxes[j].checked); 
     }
+    
+    // Reset progress shown when hovering over bar
+    bar.title = 0 + "/" + full_bar;
+    exp_bar.title = 0 + "/" + full_bar;
 
 }
 
