@@ -17,12 +17,11 @@
         <table id = "day_streak_table">
 
             <tr>
-
                 <td> <label for="day_streak" class="day_streak_text"> Day streak: </label> </td>
                 <td> <input id="day_streak_input" name="day_streak" type="number" step="1" value="0"> </td>
                 <td> 15 day streak </td>
                 <td> <input id = "15er" type = checkbox value = "00"> </td>
-                <td> <p class="margin_right"> +80exp </p> </td>
+                <td> <p class="margin_right"> +150exp </p> </td>
                 <td> <button onclick="day_streak_reset()">Reset day streak and bonus</button> </td>
             </tr>
 
@@ -31,7 +30,7 @@
                 <td> <input id="cheat_day_input" name="cheat_day" type="number" step="1" value="3"> </td>
                 <td> 10 day streak </td>
                 <td> <input id = "10er" type = checkbox value = "01"> </td>
-                <td> +50exp </td>
+                <td> +100exp </td>
             </tr>
 
              <tr>
@@ -39,7 +38,7 @@
                 <td> </td>
                 <td> 5 day streak </td>
                 <td> <input id = "5er" type = checkbox value = "02"> </td>
-                <td> +30exp </td>
+                <td> +50exp </td>
             </tr>
 
         </table>
@@ -412,9 +411,9 @@
 
     <!---Buttons---->
     <div id = "progress">
-        <button onclick="main_habit()">Main habit (70exp)</button>
-        <button onclick="main_habit_3x()">3x main habit (210exp)</button>
-        <button onclick="sub_habit()">Sub habit (40exp)</button>
+        <button onclick="main_habit()">Main habit (150exp)</button>
+        <button onclick="main_habit_3x()">3x main habit (450exp)</button>
+        <button onclick="sub_habit()">Sub habit (100exp)</button>
         <button onclick="reset()">Reset battle pass</button>
     </div>
 
