@@ -61,7 +61,6 @@ function right_width() {
 function main_habit() {
 
     width = right_width();
-    console.log(width)
     
     m_h = base_value_m_h
 
@@ -78,42 +77,38 @@ function main_habit() {
         m_h = m_h + bonus_15
     }
 
-    if (width < full_bar) {
+    if (width < full_bar - m_h) {
         // Progressbar
-        if (width < full_bar - m_h){
-            width = width + m_h;
-            w = width * 100 / full_bar;
-            bar.style.width = w + "%";
-        } else if (full_bar - m_h <= width < full_bar) {
-            width = width + m_h;
-            bar.style.width = 100 + "%";
-        }
+        width = width + m_h;
+        w = width * 100 / full_bar;
+    } else if (full_bar - m_h <= width) {
+        width = width + m_h;
+    }
+
+    if (width <= 30000) {
+        bar.style.width = w + "%";
+    } else {
+        bar.style.width = 100 + "%";
+    }
     
-        localStorage.setItem("width",width);
+    localStorage.setItem("width",width);
 
-        //Interaction between progressbar and checkboxes
-        number_true_checkboxes = Math.trunc(width / 1000)
+    //Interaction between progressbar and checkboxes
+    number_true_checkboxes = Math.trunc(width / 1000)
 
+    if (number_true_checkboxes <= 30) {
         for (let i = 0; i < number_true_checkboxes; i++) {
             if (checkboxes[i+3].checked == false) {
                 checkboxes[i+3].checked = true
                 localStorage.setItem(checkboxes[i+3].value, checkboxes[i+3].checked);
             }
         }
-
-        // Showing precise progress when hovering over bar
-        actual_progress = localStorage.getItem("width");
-        bar.title = actual_progress + "/" + full_bar;
-        exp_bar.title = actual_progress + "/" + full_bar;
-
-    } else if (width >= full_bar) {
-        width = width + m_h
-        console.log(width)
-        localStorage.setItem("width",width)
-        actual_progress = localStorage.getItem("width");
-        bar.title = actual_progress + "/" + full_bar;
-        exp_bar.title = actual_progress + "/" + full_bar;
     }
+
+    // Showing precise progress when hovering over bar
+    actual_progress = localStorage.getItem("width");
+    bar.title = actual_progress + "/" + full_bar;
+    exp_bar.title = actual_progress + "/" + full_bar;
 }
 
 function main_habit_3x() {
@@ -135,39 +130,38 @@ function main_habit_3x() {
         m_h = m_h + bonus_15
     }
 
-    if (width < full_bar) {
-        if (width < full_bar - m_h){
-            width = width + m_h;
-            w = width * 100 / full_bar;
-            bar.style.width = w + "%";
-        } else if (full_bar - m_h <= width < full_bar) {
-            width = width + m_h;
-            bar.style.width = 100 + "%";
-        }
+    if (width < full_bar - m_h) {
+        // Progressbar
+        width = width + m_h;
+        w = width * 100 / full_bar;
+    } else if (full_bar - m_h <= width) {
+        width = width + m_h;
+    }
 
-        localStorage.setItem("width",width);
+    if (width <= 30000) {
+        bar.style.width = w + "%";
+    } else {
+        bar.style.width = 100 + "%";
+    }
+    
+    localStorage.setItem("width",width);
 
-        //Interaction between progressbar and checkboxes
-        number_true_checkboxes = Math.trunc(width / 1000)
+    //Interaction between progressbar and checkboxes
+    number_true_checkboxes = Math.trunc(width / 1000)
 
+    if (number_true_checkboxes <= 30) {
         for (let i = 0; i < number_true_checkboxes; i++) {
             if (checkboxes[i+3].checked == false) {
                 checkboxes[i+3].checked = true
                 localStorage.setItem(checkboxes[i+3].value, checkboxes[i+3].checked);
             }
         }
-
-        // Showing precise progress when hovering over bar
-        actual_progress = localStorage.getItem("width");
-        bar.title = actual_progress + "/" + full_bar;
-        exp_bar.title = actual_progress + "/" + full_bar;
-    } else if (width >= full_bar) {
-        width = width + m_h
-        localStorage.setItem("width",width)
-        actual_progress = localStorage.getItem("width");
-        bar.title = actual_progress + "/" + full_bar;
-        exp_bar.title = actual_progress + "/" + full_bar;
     }
+
+    // Showing precise progress when hovering over bar
+    actual_progress = localStorage.getItem("width");
+    bar.title = actual_progress + "/" + full_bar;
+    exp_bar.title = actual_progress + "/" + full_bar;
 }
 
 function sub_habit() {
@@ -189,40 +183,38 @@ function sub_habit() {
         s_h = s_h + bonus_15
     }
 
-    if (width < full_bar) {
-        if (width < full_bar - s_h){
-            width = width + s_h;
-            w = width * 100 / full_bar;
-            bar.style.width = w + "%";
-        } else if (full_bar - s_h <= width < full_bar) {
-            width = width + m_h;
-            bar.style.width = 100 + "%";
-        }
+    if (width < full_bar - s_h) {
+        // Progressbar
+        width = width + s_h;
+        w = width * 100 / full_bar;
+    } else if (full_bar - s_h <= width) {
+        width = width + s_h;
+    }
 
-        localStorage.setItem("width",width);
+    if (width <= 30000) {
+        bar.style.width = w + "%";
+    } else {
+        bar.style.width = 100 + "%";
+    }
+    
+    localStorage.setItem("width",width);
 
-        //Interaction between progressbar and checkboxes
-        number_true_checkboxes = Math.trunc(width / 1000)
-        console.log(number_true_checkboxes)
+    //Interaction between progressbar and checkboxes
+    number_true_checkboxes = Math.trunc(width / 1000)
 
+    if (number_true_checkboxes <= 30) {
         for (let i = 0; i < number_true_checkboxes; i++) {
             if (checkboxes[i+3].checked == false) {
                 checkboxes[i+3].checked = true
                 localStorage.setItem(checkboxes[i+3].value, checkboxes[i+3].checked);
             }
         }
-
-        // Showing precise progress when hovering over bar
-        actual_progress = localStorage.getItem("width");
-        bar.title = actual_progress + "/" + full_bar;
-        exp_bar.title = actual_progress + "/" + full_bar;
-    } else if (width >= full_bar) {
-        width = width + s_h
-        localStorage.setItem("width",width)
-        actual_progress = localStorage.getItem("width");
-        bar.title = actual_progress + "/" + full_bar;
-        exp_bar.title = actual_progress + "/" + full_bar;
     }
+
+    // Showing precise progress when hovering over bar
+    actual_progress = localStorage.getItem("width");
+    bar.title = actual_progress + "/" + full_bar;
+    exp_bar.title = actual_progress + "/" + full_bar;
 }
 
 function milestone() {
@@ -243,41 +235,38 @@ function milestone() {
         m_h = m_h + bonus_15
     }
 
-    if (width < full_bar) {
+    if (width < full_bar - m_h) {
         // Progressbar
-        if (width < full_bar - m_h){
-            width = width + m_h;
-            w = width * 100 / full_bar;
-            bar.style.width = w + "%";
-        } else if (full_bar - m_h <= width < full_bar) {
-            width = width + m_h;
-            bar.style.width = 100 + "%";
-        }
+        width = width + m_h;
+        w = width * 100 / full_bar;
+    } else if (full_bar - m_h <= width) {
+        width = width + m_h;
+    }
+
+    if (width <= 30000) {
+        bar.style.width = w + "%";
+    } else {
+        bar.style.width = 100 + "%";
+    }
     
-        localStorage.setItem("width",width);
+    localStorage.setItem("width",width);
 
-        //Interaction between progressbar and checkboxes
-        number_true_checkboxes = Math.trunc(width / 1000)
-        console.log(number_true_checkboxes)
+    //Interaction between progressbar and checkboxes
+    number_true_checkboxes = Math.trunc(width / 1000)
 
+    if (number_true_checkboxes <= 30) {
         for (let i = 0; i < number_true_checkboxes; i++) {
             if (checkboxes[i+3].checked == false) {
                 checkboxes[i+3].checked = true
                 localStorage.setItem(checkboxes[i+3].value, checkboxes[i+3].checked);
             }
         }
-
-        // Showing precise progress when hovering over bar
-        actual_progress = localStorage.getItem("width");
-        bar.title = actual_progress + "/" + full_bar;
-        exp_bar.title = actual_progress + "/" + full_bar;
-    } else if (width >= full_bar) {
-        width = width + milestone_exp
-        localStorage.setItem("width",width)
-        actual_progress = localStorage.getItem("width");
-        bar.title = actual_progress + "/" + full_bar;
-        exp_bar.title = actual_progress + "/" + full_bar;
     }
+
+    // Showing precise progress when hovering over bar
+    actual_progress = localStorage.getItem("width");
+    bar.title = actual_progress + "/" + full_bar;
+    exp_bar.title = actual_progress + "/" + full_bar;
 }
 
 function minigoal() {
@@ -298,47 +287,50 @@ function minigoal() {
         m_h = m_h + bonus_15
     }
 
-    if (width < full_bar) {
+    if (width < full_bar - m_h) {
         // Progressbar
-        if (width < full_bar - m_h){
-            width = width + m_h;
-            w = width * 100 / full_bar;
-            bar.style.width = w + "%";
-        } else if (full_bar - m_h <= width < full_bar) {
-            width = width + m_h;
-            bar.style.width = 100 + "%";
-        }
+        width = width + m_h;
+        w = width * 100 / full_bar;
+    } else if (full_bar - m_h <= width) {
+        width = width + m_h;
+    }
+
+    if (width <= 30000) {
+        bar.style.width = w + "%";
+    } else {
+        bar.style.width = 100 + "%";
+    }
     
-        localStorage.setItem("width",width);
+    localStorage.setItem("width",width);
 
-        //Interaction between progressbar and checkboxes
-        number_true_checkboxes = Math.trunc(width / 1000)
+    //Interaction between progressbar and checkboxes
+    number_true_checkboxes = Math.trunc(width / 1000)
 
+    if (number_true_checkboxes <= 30) {
         for (let i = 0; i < number_true_checkboxes; i++) {
             if (checkboxes[i+3].checked == false) {
                 checkboxes[i+3].checked = true
                 localStorage.setItem(checkboxes[i+3].value, checkboxes[i+3].checked);
             }
         }
-
-        // Showing precise progress when hovering over bar
-        actual_progress = localStorage.getItem("width");
-        bar.title = actual_progress + "/" + full_bar;
-        exp_bar.title = actual_progress + "/" + full_bar;
-    } else if (width >= full_bar) {
-        width = width + minigoal_exp
-        localStorage.setItem("width",width)
-        actual_progress = localStorage.getItem("width");
-        bar.title = actual_progress + "/" + full_bar;
-        exp_bar.title = actual_progress + "/" + full_bar;
     }
+
+    // Showing precise progress when hovering over bar
+    actual_progress = localStorage.getItem("width");
+    bar.title = actual_progress + "/" + full_bar;
+    exp_bar.title = actual_progress + "/" + full_bar;
 }
 
 // Showing saved data after reloading the browser
 function load_data() {
     // Progressbar
     w = Number(localStorage.getItem("width")) * 100 / full_bar;
-    bar.style.width = w + "%";
+    if (w <= 100) {
+        bar.style.width = w + "%";
+    } else {
+        bar.style.width = 100 + "%"
+    }
+    
 
     // Checkboxes
     for (j = 0; j < checkboxes.length; j++) {
