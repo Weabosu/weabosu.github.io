@@ -388,7 +388,7 @@ function day_streak() {
     if (d_s.value == 5) {
         checkboxes[2].checked = true;
         localStorage.setItem(checkboxes[2].value, checkboxes[2].checked)
-    } else if (d_s.value == 10) {
+    } else if (d_s.value == 12) {
         checkboxes[1].checked = true;
         localStorage.setItem(checkboxes[1].value, checkboxes[1].checked)
     } else if (d_s.value == 20) {
