@@ -6,8 +6,8 @@ const full_bar = 30000;
 
 base_value_m_h = 150
 base_value_s_h = 80
-bonus_15 = 100
-bonus_10 = 50
+bonus_15 = 150
+bonus_10 = 100
 bonus_5 = 50
 
 milestone_exp = 8000
@@ -85,9 +85,8 @@ function main_habit() {
             w = width * 100 / full_bar;
             bar.style.width = w + "%";
         } else if (full_bar - m_h <= width < full_bar) {
-            width = full_bar;
-            w = width * 100 / full_bar;
-            bar.style.width = w + "%";
+            width = width + m_h;
+            bar.style.width = 100 + "%";
         }
     
         localStorage.setItem("width",width);
@@ -142,16 +141,14 @@ function main_habit_3x() {
             w = width * 100 / full_bar;
             bar.style.width = w + "%";
         } else if (full_bar - m_h <= width < full_bar) {
-            width = full_bar;
-            w = width * 100 / full_bar;
-            bar.style.width = w + "%";
+            width = width + m_h;
+            bar.style.width = 100 + "%";
         }
 
         localStorage.setItem("width",width);
 
         //Interaction between progressbar and checkboxes
         number_true_checkboxes = Math.trunc(width / 1000)
-        console.log(number_true_checkboxes)
 
         for (let i = 0; i < number_true_checkboxes; i++) {
             if (checkboxes[i+3].checked == false) {
@@ -198,9 +195,8 @@ function sub_habit() {
             w = width * 100 / full_bar;
             bar.style.width = w + "%";
         } else if (full_bar - s_h <= width < full_bar) {
-            width = full_bar;
-            w = width * 100 / full_bar;
-            bar.style.width = w + "%";
+            width = width + m_h;
+            bar.style.width = 100 + "%";
         }
 
         localStorage.setItem("width",width);
@@ -254,9 +250,8 @@ function milestone() {
             w = width * 100 / full_bar;
             bar.style.width = w + "%";
         } else if (full_bar - m_h <= width < full_bar) {
-            width = full_bar;
-            w = width * 100 / full_bar;
-            bar.style.width = w + "%";
+            width = width + m_h;
+            bar.style.width = 100 + "%";
         }
     
         localStorage.setItem("width",width);
@@ -310,9 +305,8 @@ function minigoal() {
             w = width * 100 / full_bar;
             bar.style.width = w + "%";
         } else if (full_bar - m_h <= width < full_bar) {
-            width = full_bar;
-            w = width * 100 / full_bar;
-            bar.style.width = w + "%";
+            width = width + m_h;
+            bar.style.width = 100 + "%";
         }
     
         localStorage.setItem("width",width);
@@ -388,10 +382,10 @@ function day_streak() {
     if (d_s.value == 5) {
         checkboxes[2].checked = true;
         localStorage.setItem(checkboxes[2].value, checkboxes[2].checked)
-    } else if (d_s.value == 12) {
+    } else if (d_s.value == 10) {
         checkboxes[1].checked = true;
         localStorage.setItem(checkboxes[1].value, checkboxes[1].checked)
-    } else if (d_s.value == 20) {
+    } else if (d_s.value == 15) {
         checkboxes[0].checked = true;
         localStorage.setItem(checkboxes[0].value, checkboxes[0].checked)
     }
