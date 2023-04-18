@@ -35,7 +35,7 @@ body {
 }
 
 .yellow {
-	color:hsl(40,100%,30%);
+	color:hsl(40,100%,40%);
 }
 
 .green {
@@ -43,7 +43,7 @@ body {
 }
 
 .blue {
-	color:hsl(190,100%,50%)
+	color:hsl(190,100%,40%)
 }
 
 .dark_blue {
