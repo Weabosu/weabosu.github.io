@@ -10,8 +10,8 @@ bonus_15 = 150
 bonus_10 = 100
 bonus_5 = 50
 
-milestone_exp = 10000
-minigoal_exp = 5000
+milestone_exp = 8000
+minigoal_exp = 3000
 
 const threshold = 1000;
 const bar = document.getElementById("bar");
@@ -61,6 +61,7 @@ function right_width() {
 function main_habit() {
 
     width = right_width();
+    console.log(width)
     
     m_h = base_value_m_h
 
@@ -77,7 +78,7 @@ function main_habit() {
         m_h = m_h + bonus_15
     }
 
-    if (width != full_bar) {
+    if (width < full_bar) {
         // Progressbar
         if (width < full_bar - m_h){
             width = width + m_h;
@@ -93,10 +94,8 @@ function main_habit() {
 
         //Interaction between progressbar and checkboxes
         number_true_checkboxes = Math.trunc(width / 1000)
-        console.log(number_true_checkboxes)
 
         for (let i = 0; i < number_true_checkboxes; i++) {
-            console.log(i)
             if (checkboxes[i+3].checked == false) {
                 checkboxes[i+3].checked = true
                 localStorage.setItem(checkboxes[i+3].value, checkboxes[i+3].checked);
@@ -104,6 +103,14 @@ function main_habit() {
         }
 
         // Showing precise progress when hovering over bar
+        actual_progress = localStorage.getItem("width");
+        bar.title = actual_progress + "/" + full_bar;
+        exp_bar.title = actual_progress + "/" + full_bar;
+
+    } else if (width >= full_bar) {
+        width = width + m_h
+        console.log(width)
+        localStorage.setItem("width",width)
         actual_progress = localStorage.getItem("width");
         bar.title = actual_progress + "/" + full_bar;
         exp_bar.title = actual_progress + "/" + full_bar;
@@ -129,7 +136,7 @@ function main_habit_3x() {
         m_h = m_h + bonus_15
     }
 
-    if (width != full_bar) {
+    if (width < full_bar) {
         if (width < full_bar - m_h){
             width = width + m_h;
             w = width * 100 / full_bar;
@@ -147,7 +154,6 @@ function main_habit_3x() {
         console.log(number_true_checkboxes)
 
         for (let i = 0; i < number_true_checkboxes; i++) {
-            console.log(i)
             if (checkboxes[i+3].checked == false) {
                 checkboxes[i+3].checked = true
                 localStorage.setItem(checkboxes[i+3].value, checkboxes[i+3].checked);
@@ -155,6 +161,12 @@ function main_habit_3x() {
         }
 
         // Showing precise progress when hovering over bar
+        actual_progress = localStorage.getItem("width");
+        bar.title = actual_progress + "/" + full_bar;
+        exp_bar.title = actual_progress + "/" + full_bar;
+    } else if (width >= full_bar) {
+        width = width + m_h
+        localStorage.setItem("width",width)
         actual_progress = localStorage.getItem("width");
         bar.title = actual_progress + "/" + full_bar;
         exp_bar.title = actual_progress + "/" + full_bar;
@@ -180,7 +192,7 @@ function sub_habit() {
         s_h = s_h + bonus_15
     }
 
-    if (width != full_bar) {
+    if (width < full_bar) {
         if (width < full_bar - s_h){
             width = width + s_h;
             w = width * 100 / full_bar;
@@ -198,7 +210,6 @@ function sub_habit() {
         console.log(number_true_checkboxes)
 
         for (let i = 0; i < number_true_checkboxes; i++) {
-            console.log(i)
             if (checkboxes[i+3].checked == false) {
                 checkboxes[i+3].checked = true
                 localStorage.setItem(checkboxes[i+3].value, checkboxes[i+3].checked);
@@ -206,6 +217,12 @@ function sub_habit() {
         }
 
         // Showing precise progress when hovering over bar
+        actual_progress = localStorage.getItem("width");
+        bar.title = actual_progress + "/" + full_bar;
+        exp_bar.title = actual_progress + "/" + full_bar;
+    } else if (width >= full_bar) {
+        width = width + s_h
+        localStorage.setItem("width",width)
         actual_progress = localStorage.getItem("width");
         bar.title = actual_progress + "/" + full_bar;
         exp_bar.title = actual_progress + "/" + full_bar;
@@ -230,7 +247,7 @@ function milestone() {
         m_h = m_h + bonus_15
     }
 
-    if (width != full_bar) {
+    if (width < full_bar) {
         // Progressbar
         if (width < full_bar - m_h){
             width = width + m_h;
@@ -249,7 +266,6 @@ function milestone() {
         console.log(number_true_checkboxes)
 
         for (let i = 0; i < number_true_checkboxes; i++) {
-            console.log(i)
             if (checkboxes[i+3].checked == false) {
                 checkboxes[i+3].checked = true
                 localStorage.setItem(checkboxes[i+3].value, checkboxes[i+3].checked);
@@ -257,6 +273,12 @@ function milestone() {
         }
 
         // Showing precise progress when hovering over bar
+        actual_progress = localStorage.getItem("width");
+        bar.title = actual_progress + "/" + full_bar;
+        exp_bar.title = actual_progress + "/" + full_bar;
+    } else if (width >= full_bar) {
+        width = width + milestone_exp
+        localStorage.setItem("width",width)
         actual_progress = localStorage.getItem("width");
         bar.title = actual_progress + "/" + full_bar;
         exp_bar.title = actual_progress + "/" + full_bar;
@@ -281,7 +303,7 @@ function minigoal() {
         m_h = m_h + bonus_15
     }
 
-    if (width != full_bar) {
+    if (width < full_bar) {
         // Progressbar
         if (width < full_bar - m_h){
             width = width + m_h;
@@ -297,10 +319,8 @@ function minigoal() {
 
         //Interaction between progressbar and checkboxes
         number_true_checkboxes = Math.trunc(width / 1000)
-        console.log(number_true_checkboxes)
 
         for (let i = 0; i < number_true_checkboxes; i++) {
-            console.log(i)
             if (checkboxes[i+3].checked == false) {
                 checkboxes[i+3].checked = true
                 localStorage.setItem(checkboxes[i+3].value, checkboxes[i+3].checked);
@@ -308,6 +328,12 @@ function minigoal() {
         }
 
         // Showing precise progress when hovering over bar
+        actual_progress = localStorage.getItem("width");
+        bar.title = actual_progress + "/" + full_bar;
+        exp_bar.title = actual_progress + "/" + full_bar;
+    } else if (width >= full_bar) {
+        width = width + minigoal_exp
+        localStorage.setItem("width",width)
         actual_progress = localStorage.getItem("width");
         bar.title = actual_progress + "/" + full_bar;
         exp_bar.title = actual_progress + "/" + full_bar;
@@ -344,7 +370,7 @@ function reset() {
         checkboxes[j].checked = false;
         localStorage.setItem(checkboxes[j].value, checkboxes[j].checked); 
     }
-    
+
     // Reset progress shown when hovering over bar
     bar.title = 0 + "/" + full_bar;
     exp_bar.title = 0 + "/" + full_bar;
