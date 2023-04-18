@@ -6,8 +6,8 @@ const full_bar = 30000;
 
 base_value_m_h = 150
 base_value_s_h = 80
-bonus_15 = 150
-bonus_10 = 100
+bonus_15 = 100
+bonus_10 = 50
 bonus_5 = 50
 
 milestone_exp = 8000
@@ -391,7 +391,7 @@ function day_streak() {
     } else if (d_s.value == 10) {
         checkboxes[1].checked = true;
         localStorage.setItem(checkboxes[1].value, checkboxes[1].checked)
-    } else if (d_s.value == 15) {
+    } else if (d_s.value == 20) {
         checkboxes[0].checked = true;
         localStorage.setItem(checkboxes[0].value, checkboxes[0].checked)
     }
