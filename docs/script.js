@@ -85,7 +85,7 @@ function main_habit() {
         width = width + m_h;
     }
 
-    if (width <= 30000) {
+    if (width < 30000) {
         bar.style.width = w + "%";
     } else {
         bar.style.width = 100 + "%";
@@ -138,7 +138,7 @@ function main_habit_3x() {
         width = width + m_h;
     }
 
-    if (width <= 30000) {
+    if (width < 30000) {
         bar.style.width = w + "%";
     } else {
         bar.style.width = 100 + "%";
@@ -191,7 +191,7 @@ function sub_habit() {
         width = width + s_h;
     }
 
-    if (width <= 30000) {
+    if (width < 30000) {
         bar.style.width = w + "%";
     } else {
         bar.style.width = 100 + "%";
@@ -243,7 +243,7 @@ function milestone() {
         width = width + m_h;
     }
 
-    if (width <= 30000) {
+    if (width < 30000) {
         bar.style.width = w + "%";
     } else {
         bar.style.width = 100 + "%";
@@ -295,7 +295,7 @@ function minigoal() {
         width = width + m_h;
     }
 
-    if (width <= 30000) {
+    if (width < 30000) {
         bar.style.width = w + "%";
     } else {
         bar.style.width = 100 + "%";
