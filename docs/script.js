@@ -5,7 +5,7 @@ var checkboxes = document.querySelectorAll('input[type=checkbox]'); //array-like
 const full_bar = 30000;
 
 base_value_m_h = 150
-base_value_s_h = 200
+base_value_s_h = 100
 bonus_15 = 150
 bonus_10 = 100
 bonus_5 = 50
