@@ -514,7 +514,7 @@ function cheat_day_and_skip_habit_reset() {
 
 	if (day == 1) {
 		localStorage.setItem('c_d', 3);
-		localStorage.setItem('s_h', 10);
+		localStorage.setItem('s_h', 6);
 	}
 }
 
