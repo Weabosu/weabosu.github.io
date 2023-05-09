@@ -19,23 +19,23 @@
             <tr>
                 <td> <label for="day_streak" class="day_streak_text"> Day streak: </label> </td>
                 <td> <input id="day_streak_input" name="day_streak" type="number" step="1" value="0"> </td>
-                <td> 20 day streak </td>
+                <td> 15 day streak </td>
                 <td> <input id = "15er" type = checkbox value = "00"> </td>
-                <td> <p class="margin_right"> +100exp </p> </td>
+                <td> <p class="margin_right"> +150exp </p> </td>
                 <td> <button onclick="day_streak_reset()">Reset day streak and bonus</button> </td>
             </tr>
 
              <tr>
                 <td> <label for="cheat_day" class="cheat_day_text"> Chill day: </label> </td>
                 <td> <input id="cheat_day_input" name="cheat_day" type="number" step="1" value="3"> </td>
-                <td> 12 day streak </td>
+                <td> 10 day streak </td>
                 <td> <input id = "10er" type = checkbox value = "01"> </td>
-                <td> +50exp </td>
+                <td> +100exp </td>
             </tr>
 
              <tr>
-                <td> </td>
-                <td> </td>
+                <td> <label for="cheat_day" class="skip_habit_text"> Skipping habits: </label> </td>
+                <td> <input id="skip_habit" name="skip_habit" type="number" step="1" value="10"> </td>
                 <td> 5 day streak </td>
                 <td> <input id = "5er" type = checkbox value = "02"> </td>
                 <td> +50exp </td>
@@ -55,158 +55,160 @@
             
             <!---1st row = All rewards---->
             <tr>
-                <td class = "box">
+                <td class = "small-reward">
                 </td>
                 
                 <td><i id = "arr"></i></td>
 
                 <!---1---->
-                <td class = "small-reward">
+                <td class = "small-reward reward">
                     Soft drink
                 </td>
                 
                 <td><i class = "arrow"></i></td>
-                <td class = small-reward>
+                <td class = "small-reward reward">
                     3 anime episodes
                 </td>
 
                 <td><i class = "arrow"></i></td>
-                <td class = small-reward>
-                    2h gaming
+                <td class = "small-reward reward">
+                    3h gaming
                 </td>
 
                 <td><i class = "arrow"></i></td>
-                <td class = small-reward>
+                <td class = "small-reward reward">
                     2€
                 </td>
                 
                 <!---5---->
                 <td><i class = "arrow"></i></td>
-                <td class = big-reward> 
-                    5h gaming 
+                <td class = "big-reward reward"> 
+                    6h gaming 
                 </td>
 
                 <td><i class = "arrow"></i></td>
-                <td class = small-reward>
+                <td class = "small-reward reward">
                     3 anime episodes
                 </td>
 
                 <td><i class = "arrow"></i></td>
-                <td class = small-reward>
+                <td class = "small-reward reward">
                     Sweets
                 </td>
 
                 <td><i class = "arrow"></i></td>
-                <td class = small-reward>
-                    2h gaming
+                <td class = "small-reward reward">
+                    3h gaming
                 </td>
                 
                 <td><i class = "arrow"></i></td>
-                <td class = small-reward>
+                <td class = "small-reward reward">
                     2€
                 </td>
 
                 <!---10---->
                 <td><i class = "arrow"></i></td>
-                <td class = big-reward>
+                <td class = "big-reward reward">
                     8 anime episodes
                 </td>
 
                 <td><i class = "arrow"></i></td>
-                <td class = small-reward>
+                <td class = "small-reward reward">
                     Soft drink
                 </td>
 
                 <td><i class = "arrow"></i></td>
-                <td class = small-reward>
-                    3 anime episodes
+                <td class = "small-reward reward">
+                    2€
                 </td>
                 
                 <td><i class = "arrow"></i></td>
-                <td class = small-reward>
-                    Sweets
+                <td class = "small-reward reward">
+                    3h gaming
                 </td>
 
                 <td><i class = "arrow"></i></td>
-                <td class = small-reward>
+                <td class = "small-reward reward">
                     2€
                 </td>
 
                 <!---15---->
                 <td><i class = "arrow"></i></td>
-                <td class = big-reward> 8 anime episodes </td>
+                <td class = "big-reward reward"> 
+                    Fast food 
+                </td>
 
                 <td><i class = "arrow"></i></td>
-                <td class = small-reward>
-                    2h gaming
+                <td class = "small-reward reward">
+                    3 anime episodes
                 </td>
                 
                 <td><i class = "arrow"></i></td>
-                <td class = small-reward>
-                    2h gaming
+                <td class = "small-reward reward">
+                    3h gaming
                 </td>
 
                 <td><i class = "arrow"></i></td>
-                <td class = small-reward>
+                <td class = "small-reward reward">
                     2€
                 </td>
 
                 <td><i class = "arrow"></i></td>
-                <td class = small-reward>
+                <td class = "small-reward reward">
                     Sweets
                 </td>
 
                 <!---20---->
                 <td><i class = "arrow"></i></td>
-                <td class = big-reward> 5h gaming </td>
+                <td class = "big-reward reward"> 6h gaming </td>
 
                 <td><i class = "arrow"></i></td>
-                <td class = small-reward>
-                    2h gaming
+                <td class = "small-reward reward">
+                    Soft drink
                 </td>
                 
                 <td><i class = "arrow"></i></td>
-                <td class = small-reward>
+                <td class = "small-reward reward">
                     2€
                 </td>
 
                 <td><i class = "arrow"></i></td>
-                <td class = small-reward>
+                <td class = "small-reward reward">
                     3 anime episodes
                 </td>
 
                 <td><i class = "arrow"></i></td>
-                <td class = small-reward>
+                <td class = "small-reward reward">
                     Sweets
                 </td>
 
                 <!---25---->
                 <td><i class = "arrow"></i></td>
-                <td class = big-reward> 5h gaming </td>
+                <td class = "big-reward reward"> 6€ </td>
                 
                 <td><i class = "arrow"></i></td>
-                <td class = small-reward>
-                    2h gaming
+                <td class = "small-reward reward">
+                    3h gaming
                 </td>
 
                 <td><i class = "arrow"></i></td>
-                <td class = small-reward>
-                    3 anime eps
+                <td class = "small-reward reward">
+                    2€
                 </td>
 
                 <td><i class = "arrow"></i></td>
-                <td class = small-reward>
+                <td class = "small-reward reward">
                     3 anime episodes
                 </td>
 
                 <td><i class = "arrow"></i></td>
-                <td class = small-reward>
+                <td class = "small-reward reward">
                     Soft drink
                 </td>
 
                 <!---30---->
                 <td><i class = "arrow"></i></td>
-                <td class = ult-reward> Suzume no Tojimari </td>
+                <td class = "ult-reward reward"> Suzume no Tojimari </td>
 
             </tr>
 
@@ -415,10 +417,10 @@
     <div id = "progress">
         <button onclick="main_habit()" class = "dark_blue"> Main habit (150exp) </button>
         <button onclick="main_habit_3x()" class = "purple"> 3x main habit (450exp) </button>
-        <button onclick="sub_habit()" class = "blue"> Bonus (100exp) </button>
+        <button onclick="sub_habit()" class = "blue"> Sub habit (80exp) </button>
         <button onclick="milestone()" class = "yellow"> Milestone (8000exp) </button>
         <button onclick="minigoal()" class = "green"> Minigoal (3000exp) </button>
-        <button onclick="reset()"> Reset battle pass </button>
+        <button onclick="new_battle_pass()"> Generate new battle pass </button>
     </div>
 
 
