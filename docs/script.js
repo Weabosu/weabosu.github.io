@@ -26,10 +26,10 @@ var d_s_box_10 = document.getElementById("10er");
 var d_s_box_5 = document.getElementById("5er");
 
 // Needed entities var generating random battle passes
-var all_small_rewards = ["3\u20AC", "2 sweets", "3 anime eps", "3h gaming", "1 anime ep + 1 soft drink", "1 anime ep + 1 soft drink",
+var all_small_rewards = ["3\u20AC", "2 sweets", "3 anime eps", "2h gaming", "1 anime ep + 1 soft drink", "1 anime ep + 1 soft drink",
 						"1 anime ep + 1 sweet", "1h gaming + 1 soft drink", "1h gaming + 1 sweet", "2 sweets", "2 soft drinks", "1 fast food"]
-var all_big_rewards = ["8\u20AC", "8 anime eps", "5h gaming", "1 chill day", "1 fast food + 1 sweet + 1 soft drink"]
-var all_ult_rewards = ["15\u20AC", "1 video game", "1 anime merchandise", "20 anime eps + 12h gaming"]
+var all_big_rewards = ["8\u20AC", "8 anime eps", "6h gaming", "1 chill day", "1 fast food + 1 sweet + 1 soft drink"]
+var all_ult_rewards = ["18\u20AC", "1 video game", "1 anime merchandise", "18 anime eps + 12h gaming"]
 
 var small_reward_list = document.getElementsByClassName("small-reward")
 var big_reward_list = document.getElementsByClassName("big-reward")
