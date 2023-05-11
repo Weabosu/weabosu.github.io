@@ -84,7 +84,7 @@ body {
 	width:30px;
 }
 
-#skip_habit {
+#skip_habit_input {
 	width:40px;
 }
 
@@ -122,7 +122,7 @@ table {
 
 /*-----Small rewards-----*/
 .small-reward{
-	min-width:120px;
+	min-width:100px;
 	border:3px solid;
 	border-radius:5px;
 	padding:5px 5px;
@@ -163,7 +163,7 @@ button {
 
 /*-----Box-----*/
 .box {
-	min-width:80px;
+	min-width:110px;
 	padding:5px 5px;
 }
 
@@ -180,11 +180,12 @@ button {
 /*-----Exp-bar-----*/
 #exp-bar {
 	/*width:3967px;*/
-	width:98.2%;
+	width:97.7%;
 	border: solid white;
 	border-radius:25px;
 	background-color: transparant;
 	margin-left:42px;
+	margin-top: 10px;
 }
 
 #bar {

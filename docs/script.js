@@ -7,8 +7,8 @@ const full_bar = 30000;
 
 const base_value_m_h = 150
 const base_value_s_h = 80
-const bonus_15 = 150
-const bonus_10 = 100
+const bonus_15 = 100
+const bonus_10 = 50
 const bonus_5 = 50
 
 const milestone_exp = 8000
@@ -20,7 +20,7 @@ const exp_bar = document.getElementById("exp-bar");
 
 var c_d = document.getElementById("cheat_day_input");
 var d_s = document.getElementById("day_streak_input");
-var s_h = document.getElementById("skip_habit")
+var s_h = document.getElementById("skip_habit_input")
 var d_s_box_15 = document.getElementById("15er");
 var d_s_box_10 = document.getElementById("10er");
 var d_s_box_5 = document.getElementById("5er");
@@ -116,7 +116,7 @@ function main_habit() {
 	localStorage.setItem("width",width);
 
 	//Interaction between progressbar and checkboxes
-	number_true_checkboxes = Math.trunc(width / 1000)
+	/*number_true_checkboxes = Math.trunc(width / 1000)
 
 	if (number_true_checkboxes <= 30) {
 		for (let i = 0; i < number_true_checkboxes; i++) {
@@ -125,7 +125,7 @@ function main_habit() {
 				localStorage.setItem(checkboxes[i+3].value, checkboxes[i+3].checked);
 			}
 		}
-	}
+	}*/
 
 	// Showing precise progress when hovering over bar
 	actual_progress = localStorage.getItem("width");
@@ -177,7 +177,7 @@ function main_habit_3x() {
 	localStorage.setItem("width",width);
 
 	//Interaction between progressbar and checkboxes
-	number_true_checkboxes = Math.trunc(width / 1000)
+	/*number_true_checkboxes = Math.trunc(width / 1000)
 
 	if (number_true_checkboxes <= 30) {
 		for (let i = 0; i < number_true_checkboxes; i++) {
@@ -186,7 +186,7 @@ function main_habit_3x() {
 				localStorage.setItem(checkboxes[i+3].value, checkboxes[i+3].checked);
 			}
 		}
-	}
+	}*/
 
 	// Showing precise progress when hovering over bar
 	actual_progress = localStorage.getItem("width");
@@ -238,7 +238,7 @@ function sub_habit() {
 	localStorage.setItem("width",width);
 
 	//Interaction between progressbar and checkboxes
-	number_true_checkboxes = Math.trunc(width / 1000)
+	/*number_true_checkboxes = Math.trunc(width / 1000)
 
 	if (number_true_checkboxes <= 30) {
 		for (let i = 0; i < number_true_checkboxes; i++) {
@@ -247,7 +247,7 @@ function sub_habit() {
 				localStorage.setItem(checkboxes[i+3].value, checkboxes[i+3].checked);
 			}
 		}
-	}
+	}*/
 
 	// Showing precise progress when hovering over bar
 	actual_progress = localStorage.getItem("width");
@@ -298,7 +298,7 @@ function milestone() {
 	localStorage.setItem("width",width);
 
 	//Interaction between progressbar and checkboxes
-	number_true_checkboxes = Math.trunc(width / 1000)
+	/*number_true_checkboxes = Math.trunc(width / 1000)
 
 	if (number_true_checkboxes <= 30) {
 		for (let i = 0; i < number_true_checkboxes; i++) {
@@ -314,7 +314,7 @@ function milestone() {
 				localStorage.setItem(checkboxes[i+3].value, checkboxes[i+3].checked);
 			}
 		}
-	}
+	}*/
 
 	// Showing precise progress when hovering over bar
 	actual_progress = localStorage.getItem("width");
@@ -365,7 +365,7 @@ function minigoal() {
 	localStorage.setItem("width",width);
 
 	//Interaction between progressbar and checkboxes
-	number_true_checkboxes = Math.trunc(width / 1000)
+	/*number_true_checkboxes = Math.trunc(width / 1000)
 
 	if (number_true_checkboxes <= 30) {
 		for (let i = 0; i < number_true_checkboxes; i++) {
@@ -381,7 +381,7 @@ function minigoal() {
 				localStorage.setItem(checkboxes[i+3].value, checkboxes[i+3].checked);
 			}
 		}
-	}
+	}*/
 
 	// Showing precise progress when hovering over bar
 	actual_progress = localStorage.getItem("width");
@@ -462,10 +462,10 @@ function day_streak() {
 	if (d_s.value == 5) {
 		checkboxes[2].checked = true;
 		localStorage.setItem(checkboxes[2].value, checkboxes[2].checked)
-	} else if (d_s.value == 10) {
+	} else if (d_s.value == 12) {
 		checkboxes[1].checked = true;
 		localStorage.setItem(checkboxes[1].value, checkboxes[1].checked)
-	} else if (d_s.value == 15) {
+	} else if (d_s.value == 20) {
 		checkboxes[0].checked = true;
 		localStorage.setItem(checkboxes[0].value, checkboxes[0].checked)
 	}
@@ -514,7 +514,7 @@ function cheat_day_and_skip_habit_reset() {
 
 	if (day == 1) {
 		localStorage.setItem('c_d', 3);
-		localStorage.setItem('s_h', 6);
+		localStorage.setItem('s_h', 10);
 	}
 }
 
@@ -536,7 +536,7 @@ function new_battle_pass() {
 
 	for (i=0; i < all_reward_list.length; i++) {
 		if (!(i == 4 || i == 9 || i == 14 || i == 19 || i == 24 || i == 29)) {
-			all_reward_list[i].style.backgroundColor = "black";
+			all_reward_list[i].style.backgroundColor = "transparent";
 		} else if (i == 4 || i == 9 || i == 14 || i == 19 || i == 24) {
 			all_reward_list[i].style.backgroundColor = "hsla(240,80%,50%,0.5)"
 		} else {
@@ -571,8 +571,10 @@ function new_battle_pass() {
 
 	// Ult rewards
 	for(let i = 0; i < ult_reward_list.length; i++) {
-		ult_reward_list[i].innerHTML = random_reward(all_ult_rewards);
-		localStorage.setItem("ult_reward".concat(i), ult_reward_list[i].innerHTML);
+		// ult_reward_list[i].innerHTML = random_reward(all_ult_rewards);
+		ult_reward_list[i].innerHTML = "Suzume no Tojimari";
+		// localStorage.setItem("ult_reward".concat(i), ult_reward_list[i].innerHTML);
+		localStorage.setItem("ult_reward".concat(i), "Suzume no Tojimari");
 	}
 }
 

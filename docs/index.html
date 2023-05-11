@@ -1,11 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
     <title>Life battle pass</title>
 
-    <link href="./style.css" rel="stylesheet">
+    <!---<link href="D:\Documents\Life battle pass\Habit battle pass\style.css" rel="stylesheet">---->
+    <link href="style.css" rel="stylesheet">
+    <!---<link href="./style.css" rel="stylesheet">---->
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
@@ -19,23 +21,23 @@
             <tr>
                 <td> <label for="day_streak" class="day_streak_text"> Day streak: </label> </td>
                 <td> <input id="day_streak_input" name="day_streak" type="number" step="1" value="0"> </td>
-                <td> 15 day streak </td>
+                <td> 20 day streak </td>
                 <td> <input id = "15er" type = checkbox value = "00"> </td>
-                <td> <p class="margin_right"> +150exp </p> </td>
+                <td> <p class="margin_right"> +100exp </p> </td>
                 <td> <button onclick="day_streak_reset()">Reset day streak and bonus</button> </td>
             </tr>
 
              <tr>
                 <td> <label for="cheat_day" class="cheat_day_text"> Chill day: </label> </td>
                 <td> <input id="cheat_day_input" name="cheat_day" type="number" step="1" value="3"> </td>
-                <td> 10 day streak </td>
+                <td> 12 day streak </td>
                 <td> <input id = "10er" type = checkbox value = "01"> </td>
-                <td> +100exp </td>
+                <td> +50exp </td>
             </tr>
 
              <tr>
-                <td> <label for="cheat_day" class="skip_habit_text"> Skipping habits: </label> </td>
-                <td> <input id="skip_habit" name="skip_habit" type="number" step="1" value="6"> </td>
+                <td> <label for="cheat_day" class="skip_habit_text"> Habit skipper: </label> </td>
+                <td> <input id="skip_habit_input" name="skip_habit" type="number" step="1" value="6"> </td>
                 <td> 5 day streak </td>
                 <td> <input id = "5er" type = checkbox value = "02"> </td>
                 <td> +50exp </td>
@@ -55,7 +57,7 @@
             
             <!---1st row = All rewards---->
             <tr>
-                <td class = "small-reward">
+                <td class = "box">
                 </td>
                 
                 <td><i id = "arr"></i></td>
@@ -213,7 +215,7 @@
             </tr>
 
             <!---2nd row = Checkboxes---->
-            <tr>
+            <!---<tr>
                 <td></td>
 
                 <td></td>
@@ -397,7 +399,7 @@
                     <input id = "Day 30" type = checkbox value="30">
                 </td>
 
-            </tr>
+            </tr>---->
 
             <!---3nd row = Progress bar---->
             <tr>
@@ -424,7 +426,9 @@
     </div>
 
 
-    <script src="./script.js"></script>
+    <!---<script src="D:\Documents\Life battle pass\Habit battle pass\script.js"></script>---->
+    <!---<script src="./script.js"></script>---->
+    <script src="script.js"></script>
    
 
 </body>
