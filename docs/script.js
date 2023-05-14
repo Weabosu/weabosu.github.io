@@ -6,8 +6,8 @@ var checkboxes = document.querySelectorAll('input[type=checkbox]'); //array-like
 const full_bar = 30000;
 
 const base_value_m_h = 150
-const base_value_s_h = 80
-const bonus_15 = 100
+const base_value_s_h = 50
+const bonus_15 = 50
 const bonus_10 = 50
 const bonus_5 = 50
 
@@ -514,7 +514,7 @@ function cheat_day_and_skip_habit_reset() {
 
 	if (day == 1) {
 		localStorage.setItem('c_d', 3);
-		localStorage.setItem('s_h', 10);
+		localStorage.setItem('s_h', 5);
 	}
 }
 

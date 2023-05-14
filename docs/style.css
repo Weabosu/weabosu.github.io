@@ -55,8 +55,8 @@ body {
 }
 
 .dark-mode {
-	/*background-color: #181818;*/
-	background-color: transparant;
+	background-color: #181818;
+	/*background-color: transparant;*/
 	color: white;
 }
 
