@@ -532,7 +532,6 @@ function day_streak_reset() {
 
 //-------Generate new battle pass-------
 function new_battle_pass() {
-	localStorage.clear()
 
 	for (i=0; i < all_reward_list.length; i++) {
 		if (!(i == 4 || i == 9 || i == 14 || i == 19 || i == 24 || i == 29)) {
@@ -545,10 +544,6 @@ function new_battle_pass() {
 	}
 
 	bar.style.width = "0%";
-	for (j = 3; j < checkboxes.length; j++) {
-		checkboxes[j].checked = false;
-		localStorage.setItem(checkboxes[j].value, checkboxes[j].checked); 
-	}
 
 	// Reset progress shown when hovering over bar
 	bar.title = 0 + "/" + full_bar;
