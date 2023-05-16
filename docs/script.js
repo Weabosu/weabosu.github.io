@@ -571,10 +571,8 @@ function new_battle_pass() {
 
 	// Ult rewards
 	for(let i = 0; i < ult_reward_list.length; i++) {
-		// ult_reward_list[i].innerHTML = random_reward(all_ult_rewards);
-		ult_reward_list[i].innerHTML = "Suzume no Tojimari";
-		// localStorage.setItem("ult_reward".concat(i), ult_reward_list[i].innerHTML);
-		localStorage.setItem("ult_reward".concat(i), "Suzume no Tojimari");
+		ult_reward_list[i].innerHTML = random_reward(all_ult_rewards);
+		localStorage.setItem("ult_reward".concat(i), ult_reward_list[i].innerHTML);
 	}
 }
 
