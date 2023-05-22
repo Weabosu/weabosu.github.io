@@ -26,7 +26,8 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
- line-height: 1;
+	line-height: 1;
+	transition: transform 0.8s ease-in-out;
 }
 
 /*-------------Basic stuff-------------*/
@@ -54,10 +55,11 @@ body {
 	color:hsl(300,100%,50%)
 }
 
-.dark-mode {
-	/*background-color: #181818;*/
-	background-color: transparant;
+.body_class {
+	background-color: #181818;
+	/*background-color: transparant;*/
 	color: white;
+	overflow: hidden;
 }
 
 /*-------------Day streak-------------*/
@@ -95,6 +97,7 @@ body {
 /*-------------Bar-------------*/
 #Lbp-bar {
 	overflow: scroll;
+	margin-top: 35px;
 }
 
 /*Right arrow*/
@@ -193,4 +196,156 @@ button {
 	height: 15px;
 	border-radius:25px;
 	background-color: green;
+}
+
+/*Style for random reward generator*/
+
+.triangle-left {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-right: 10px solid black;
+}
+
+.triangle-right {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-left: 10px solid black;
+}
+
+
+/*----------------------------------------------------------------*/
+/*--------------Button to switch between battle pass and reward generator--------------*/
+/*----------------------------------------------------------------*/
+.switch_button {
+	width: 60px;
+	height: 60px;
+	border: solid rgba(255, 255, 255, 0.732);
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	border-radius: 40%;
+	cursor: pointer;
+	user-select: none;
+	transition: transform 0.8s ease-in-out;
+}
+
+.switch_button .switch_triangle {
+	margin: 13px auto;
+	width: 30px;
+	height: 30px;
+	background-color: rgba(255, 255, 255, 0.732);
+	clip-path: polygon(50% 100%, 0 0, 100% 0);
+}
+
+
+/*----------------------------------------------------------------*/
+/*--------------Styling for random reward generators--------------*/
+/*----------------------------------------------------------------*/
+
+.generator_container {
+	position: relative;
+	overflow: hidden;
+	width: 250px;
+	height: 25px
+  }
+  
+.generator {
+	position: absolute;
+	top: 0;
+    left: 0;
+	width: 95%;
+	height: 100%;
+	transition: transform 0.8s ease-in-out;
+}
+
+.generator_align {
+	margin: auto;
+}
+
+.rew_wheel_container {
+	position: relative;
+	width: 350px;
+	height: 350px;
+	overflow: hidden;
+	margin: auto;
+}
+
+.rew_wheel {
+	position: absolute;
+	width: 250px;
+	height: 250px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 25px;
+	transition: transform 0.8s ease-in-out;
+}
+
+.rew_wheel .spinBtn {
+	position: absolute;
+	width: 45px;
+	height: 45px;
+	background: #fff;
+	border-radius: 50%;
+	z-index: 10;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+	color: #333;
+	border: 4px solid rgba(0, 0, 0, 0.75);
+}
+
+.rew_wheel .spinBtn::before {
+	content: "";
+	position: absolute;
+	width: 20px;
+	height: 30px;
+	background: #fff;
+	clip-path: polygon(50% 0%, 10% 100%, 90% 100%);
+	transform: rotate(-90deg) translateY(-25px);
+}
+
+.rew_wheel .wheel {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #333;
+	overflow: hidden;
+	border-radius: 50%;
+	box-shadow: 0 0 0 5px #333, 0 0 0 12px #fff;
+	transition: transform 4s ease-in-out;
+}
+
+.rew_wheel .wheel .number {
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	background: var(--clr);
+	transform-origin: bottom right;
+	transform: rotate(calc(45deg * var(--i)));
+	clip-path: polygon(0 0, 60% 0, 100% 100%, 0 60%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.rew_wheel .wheel .number span {
+	position: relative;
+	transform: rotate(45deg);
+	font-size: 3mm;
+	font-weight: 700;
+	color: #fff;
+	width: 90px;
+	margin-top: 15px;
+	margin-left: 10px;
+	text-align: center;
 }

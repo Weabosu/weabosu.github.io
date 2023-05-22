@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 
-<body class = "dark-mode">
+<body class = "body_class">
     <!---Day streak---->
     <div>
 
@@ -46,10 +46,6 @@
         </table>
 
     </div>
-
-    <br>
-
-    <br>
 
     <div id = "Lbp-bar">
 
@@ -425,6 +421,139 @@
         <button onclick="new_battle_pass()"> Generate new battle pass </button>
     </div>
 
+    <!---Create button to switch between battle pass and reward generator---->
+    <div class = "switch_button">
+
+        <div class="switch_triangle"></div>
+
+    </div>
+
+
+    <div id = "random_reward_generator">
+        <!----Generator buttons---->
+        <table class = "generator_align">
+
+            <tr>
+                <td>
+                    <button onclick="prev_generator()">
+                        &#11164
+                    </button>
+                </td>
+
+                <td>
+                    <div class = "generator_container">
+                        <button class = "generator" onclick="random_reward_generator()"> Standard reward generator</button>
+                        <button class = "generator" onclick="random_reward_generator()"> Anime reward generator</button>
+                        <button class = "generator" onclick="random_reward_generator()"> Gaming reward generator</button>
+                    </div>
+                </td>
+
+                <td>
+                    <button onclick="next_generator()">
+                        &#11166
+                    </button>
+                </td>
+            </tr>
+            
+        </table>
+
+        <!----Reward spinning wheel---->
+        <div class = "rew_wheel_container">
+
+            <div class = "rew_wheel">
+                <div class = "spinBtn"></div>
+                <div class = "wheel">
+                    <div class = "number" style = "--i:1;--clr:#db7093;">
+                        <span> 600hp </span>
+                    </div>
+                    <div class = "number" style = "--i:2;--clr:#20b2aa;">
+                        <span> 3 anime eps </span>
+                    </div>
+                    <div class = "number" style = "--i:3;--clr:#d63e92;">
+                        <span> 1 anime ep + 1h gaming </span>
+                    </div>
+                    <div class = "number" style = "--i:4;--clr:#daa520;">
+                        <span> 1 anime ep + 50hp </span>
+                    </div>
+                    <div class = "number" style = "--i:5;--clr:#ff340f;">
+                        <span> 2h gaming </span>
+                    </div>
+                    <div class = "number" style = "--i:6;--clr:#5698b9;">
+                        <span> 1h gaming + 1 soft drink </span>
+                    </div>
+                    <div class = "number" style = "--i:7;--clr:#4169e1;">
+                        <span> 1h gaming + 1 snack </span>
+                    </div>
+                    <div class = "number" style = "--i:8;--clr:#2ec02e;">
+                        <span> 1h gaming + 50hp </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class = "rew_wheel">
+                <div class = "spinBtn"></div>
+                <div class = "wheel">
+                    <div class = "number" style = "--i:1;--clr:#db7093;">
+                        <span> 8 anime eps </span>
+                    </div>
+                    <div class = "number" style = "--i:2;--clr:#20b2aa;">
+                        <span> 3 anime eps </span>
+                    </div>
+                    <div class = "number" style = "--i:3;--clr:#d63e92;">
+                        <span> 1 anime ep + 1 snack </span>
+                    </div>
+                    <div class = "number" style = "--i:4;--clr:#daa520;">
+                        <span> 1 anime ep + 1 soft drink </span>
+                    </div>
+                    <div class = "number" style = "--i:5;--clr:#ff340f;">
+                        <span> 8 anime eps </span>
+                    </div>
+                    <div class = "number" style = "--i:6;--clr:#5698b9;">
+                        <span> 1 anime ep + 1h gaming </span>
+                    </div>
+                    <div class = "number" style = "--i:7;--clr:#4169e1;">
+                        <span> 1 anime ep + 50hp </span>
+                    </div>
+                    <div class = "number" style = "--i:8;--clr:#2ec02e;">
+                        <span> 18 anime eps </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "rew_wheel">
+                <div class = "spinBtn"></div>
+                <div class = "wheel">
+                    <div class = "number" style = "--i:1;--clr:#db7093;">
+                        <span> 6h gaming </span>
+                    </div>
+                    <div class = "number" style = "--i:2;--clr:#20b2aa;">
+                        <span> 2h gaming </span>
+                    </div>
+                    <div class = "number" style = "--i:3;--clr:#d63e92;">
+                        <span> 1h gaming + 1 snack </span>
+                    </div>
+                    <div class = "number" style = "--i:4;--clr:#daa520;">
+                        <span> 1h gaming + 1 soft drink </span>
+                    </div>
+                    <div class = "number" style = "--i:5;--clr:#ff340f;">
+                        <span> 1h gaming + 1 fast food </span>
+                    </div>
+                    <div class = "number" style = "--i:6;--clr:#5698b9;">
+                        <span> 1h gaming + 50hp </span>
+                    </div>
+                    <div class = "number" style = "--i:7;--clr:#4169e1;">
+                        <span> 1 anime ep + 1h gaming </span>
+                    </div>
+                    <div class = "number" style = "--i:8;--clr:#2ec02e;">
+                        <span> 12h gaming </span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        
+    </div>
 
     <!----<script src="D:\Documents\Life battle pass\Habit battle pass\script.js"></script>---->
     <script src="./script.js"></script>
