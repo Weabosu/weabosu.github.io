@@ -321,7 +321,7 @@ button {
 	background: #333;
 	overflow: hidden;
 	border-radius: 50%;
-	box-shadow: 0 0 0 5px #333, 0 0 0 12px #fff;
+	box-shadow: 0 0 0 4px #333, 0 0 0 10px #fff;
 	transition: transform 4s ease-in-out;
 }
 
