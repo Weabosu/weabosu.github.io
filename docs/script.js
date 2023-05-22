@@ -620,7 +620,7 @@ var gMode = 1
 gSwitch_button.onclick = function() {
 	if (gMode == 1) {
 		// Shift whole screen to the top
-		gBody_class.style.transform = "translateY(-340px)"
+		gBody_class.style.transform = "translateY(-300px)"
 
 		// Change triangle direction
 		gSwitch_triangle.style.clipPath = "polygon(50% 0, 0 100%, 100% 100%)"
