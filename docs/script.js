@@ -553,7 +553,7 @@ function day_streak_reset() {
 //-----------------------------------------------------------------------------
 function new_battle_pass() {
 
-	for (i=0; i < all_reward_list.length; i++) {
+	for (i = 0; i < all_reward_list.length; i++) {
 		if (!(i == 4 || i == 9 || i == 14 || i == 19 || i == 24 || i == 29)) {
 			all_reward_list[i].style.backgroundColor = "transparent";
 		} else if (i == 4 || i == 9 || i == 14 || i == 19 || i == 24) {
@@ -561,6 +561,10 @@ function new_battle_pass() {
 		} else {
 			all_reward_list[i].style.backgroundColor = "hsla(60,100%,80%,0.4)"
 		}
+	}
+
+	for (i = 0; i < all_reward_list.length; i++) {
+		localStorage.setItem("reward-color".concat(i), all_reward_list[i].style.backgroundColor)
 	}
 
 	bar.style.width = "0%";
