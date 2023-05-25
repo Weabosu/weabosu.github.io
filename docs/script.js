@@ -419,14 +419,8 @@ function load_data() {
 	} else {
 		bar.style.width = 100 + "%"
 	}
-	
 
-	// Checkboxes
-	for (j = 0; j < checkboxes.length; j++) {
-		checkboxes[j].checked = localStorage.getItem(checkboxes[j].value) === 'true' ? true:false;
-	}
-
-	// Cheat day
+	// Chill day
 	if (Number(localStorage.getItem('c_d')) !== null) {
 		c_d.value = Number(localStorage.getItem('c_d'))
 	}
@@ -570,6 +564,7 @@ function new_battle_pass() {
 	}
 
 	bar.style.width = "0%";
+	localStorage.setItem("width","0");
 
 	// Reset progress shown when hovering over bar
 	bar.title = 0 + "/" + full_bar;
