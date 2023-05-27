@@ -453,6 +453,14 @@ function load_data() {
 		all_reward_list[i].style.backgroundColor = localStorage.getItem("reward-color".concat(i))
 	}
 
+	// Day streak bonus
+	for (let i = 0; i <= 2; i++) {
+		if (localStorage.getItem(checkboxes[i].value) == "true") {
+			checkboxes[i].checked = true
+		} else {
+			checkboxes[i].checked = false
+		}
+	}
 }
 
 
@@ -490,35 +498,36 @@ function bonus_reset_15() {
 
 	if (checkboxes[0].checked == false) {
 		checkboxes[0].checked = false;
-		localStorage.setItem(checkboxes[0].value, checkboxes[0].checked);
 	}
 	else {
 		checkboxes[0].checked = true;
-		localStorage.setItem(checkboxes[0].value, checkboxes[0].checked);
 	}
 
+	localStorage.setItem(checkboxes[0].value, checkboxes[0].checked)
 }
 
 function bonus_reset_10() {
 	if (checkboxes[1].checked == false) {
 		checkboxes[1].checked = false;
-		localStorage.setItem(checkboxes[1].value, checkboxes[1].checked);
 	}
 	else {
 		checkboxes[1].checked = true;
-		localStorage.setItem(checkboxes[1].value, checkboxes[1].checked);
 	}
+
+	localStorage.setItem(checkboxes[1].value, checkboxes[1].checked)
 }
 
 function bonus_reset_5() {
 	if (checkboxes[2].checked == false) {
 		checkboxes[2].checked = false;
-		localStorage.setItem(checkboxes[2].value, checkboxes[2].checked);
 	}
 	else {
 		checkboxes[2].checked = true;
-		localStorage.setItem(checkboxes[2].value, checkboxes[2].checked);
 	}
+
+	localStorage.setItem(checkboxes[2].value, checkboxes[2].checked)
+
+	console.log(checkboxes[2].checked)
 }
 
 
