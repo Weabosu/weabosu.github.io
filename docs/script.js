@@ -155,7 +155,7 @@ function main_habit_3x() {
 
 	width = right_width();
 
-	m_h = 3 * base_value_m_h
+	m_h = base_value_m_h
 
 	// Check if any bonus exp is avaiable starting with lowest
 	if (checkboxes[2].checked == true) {
@@ -169,6 +169,8 @@ function main_habit_3x() {
 	if (checkboxes[0].checked == true) {
 		m_h = m_h + bonus_15
 	}
+
+	m_h = 3 * m_h
 
 	if (width < full_bar - m_h) {
 		// Progressbar
