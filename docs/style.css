@@ -63,8 +63,14 @@ body {
 }
 
 /*-------------Day streak-------------*/
-.margin_right {
-	margin-right:50px;
+.day_streak_button {
+	position:absolute;
+	left:500px;
+	top:5px;
+}
+
+#day_streak_table tr .col_bonus_exp {
+	padding-left:20px
 }
 
 .day_streak_text {

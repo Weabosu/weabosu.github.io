@@ -101,10 +101,6 @@ function main_habit() {
 		m_h = m_h + bonus_5
 	}
 
-	if (checkboxes[1].checked == true) {
-		m_h = m_h + bonus_10
-	}
-
 	if (checkboxes[0].checked == true) {
 		m_h = m_h + bonus_15
 	}
@@ -162,10 +158,6 @@ function main_habit_3x() {
 		m_h = m_h + bonus_5
 	}
 
-	if (checkboxes[1].checked == true) {
-		m_h = m_h + bonus_10
-	}
-
 	if (checkboxes[0].checked == true) {
 		m_h = m_h + bonus_15
 	}
@@ -221,16 +213,8 @@ function sub_habit() {
 	s_h = base_value_s_h
 
 	// Check if any bonus exp is avaiable starting with lowest
-	if (checkboxes[2].checked == true) {
-		s_h = s_h + bonus_5
-	}
-
 	if (checkboxes[1].checked == true) {
 		s_h = s_h + bonus_10
-	}
-
-	if (checkboxes[0].checked == true) {
-		s_h = s_h + bonus_15
 	}
 
 	if (width < full_bar - s_h) {

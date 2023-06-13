@@ -14,7 +14,9 @@
 
 <body class = "body_class">
     <!---Day streak---->
+    
     <div>
+        <button onclick="day_streak_reset()" class="day_streak_button"> Reset day streak and bonus </button>
 
         <table id = "day_streak_table">
 
@@ -23,8 +25,7 @@
                 <td> <input id="day_streak_input" name="day_streak" type="number" step="1" value="0"> </td>
                 <td> 20 day streak </td>
                 <td> <input id = "15er" type = checkbox value = "00"> </td>
-                <td> <p class="margin_right"> +50exp </p> </td>
-                <td> <button onclick="day_streak_reset()">Reset day streak and bonus</button> </td>
+                <td class="col_bonus_exp"> +50exp for main habit </td>
             </tr>
 
              <tr>
@@ -32,7 +33,7 @@
                 <td> <input id="cheat_day_input" name="cheat_day" type="number" step="1" value="3"> </td>
                 <td> 12 day streak </td>
                 <td> <input id = "10er" type = checkbox value = "01"> </td>
-                <td> +50exp </td>
+                <td class="col_bonus_exp"> +50exp for sub habit </td>
             </tr>
 
              <tr>
@@ -40,7 +41,7 @@
                 <td> <input id="skip_habit_input" name="skip_habit" type="number" step="1" value="6"> </td>
                 <td> 5 day streak </td>
                 <td> <input id = "5er" type = checkbox value = "02"> </td>
-                <td> +50exp </td>
+                <td class="col_bonus_exp"> +50exp for main habit </td>
             </tr>
 
         </table>
@@ -494,25 +495,25 @@
                 <div class = "spinBtn"></div>
                 <div class = "wheel">
                     <div class = "number" style = "--i:1;--clr:#db7093;">
-                        <span> 1 anime ep + 1 fast food </span>
+                        <span> 2 anime ep + 2 fast food </span>
                     </div>
                     <div class = "number" style = "--i:2;--clr:#20b2aa;">
-                        <span> 3 anime eps </span>
+                        <span> 6 anime eps </span>
                     </div>
                     <div class = "number" style = "--i:3;--clr:#d63e92;">
-                        <span> 1 anime ep + 1 snack </span>
+                        <span> 2 anime ep + 2 snack </span>
                     </div>
                     <div class = "number" style = "--i:4;--clr:#daa520;">
-                        <span> 1 anime ep + 1 soft drink </span>
+                        <span> 2 anime ep + 2 soft drink </span>
                     </div>
                     <div class = "number" style = "--i:5;--clr:#ff340f;">
-                        <span> 8 anime eps </span>
+                        <span> 9 anime eps </span>
                     </div>
                     <div class = "number" style = "--i:6;--clr:#5698b9;">
-                        <span> 1 anime ep + 1h gaming </span>
+                        <span> 2 anime ep + 2h gaming </span>
                     </div>
                     <div class = "number" style = "--i:7;--clr:#4169e1;">
-                        <span> 1 anime ep + 50hp </span>
+                        <span> 2 anime ep + 100hp </span>
                     </div>
                     <div class = "number" style = "--i:8;--clr:#2ec02e;">
                         <span> 18 anime eps </span>
@@ -524,25 +525,25 @@
                 <div class = "spinBtn"></div>
                 <div class = "wheel">
                     <div class = "number" style = "--i:1;--clr:#db7093;">
-                        <span> 1h gaming + 50hp </span>
+                        <span> 2h gaming + 100hp </span>
                     </div>
                     <div class = "number" style = "--i:2;--clr:#20b2aa;">
-                        <span> 1h gaming + 1 soft drink </span>
+                        <span> 2h gaming + 2 soft drink </span>
                     </div>
                     <div class = "number" style = "--i:3;--clr:#d63e92;">
-                        <span> 1h gaming + 1 snack </span>
+                        <span> 2h gaming + 2 snack </span>
                     </div>
                     <div class = "number" style = "--i:4;--clr:#daa520;">
-                        <span> 2h gaming</span>
+                        <span> 4h gaming</span>
                     </div>
                     <div class = "number" style = "--i:5;--clr:#ff340f;">
-                        <span> 1h gaming + 1 fast food </span>
+                        <span> 2h gaming + 2 fast food </span>
                     </div>
                     <div class = "number" style = "--i:6;--clr:#5698b9;">
                         <span> 6h gaming </span>
                     </div>
                     <div class = "number" style = "--i:7;--clr:#4169e1;">
-                        <span> 1 anime ep + 1h gaming </span>
+                        <span> 2 anime ep + 2h gaming </span>
                     </div>
                     <div class = "number" style = "--i:8;--clr:#2ec02e;">
                         <span> 12h gaming </span>
